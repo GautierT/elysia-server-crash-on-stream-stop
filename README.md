@@ -1,15 +1,34 @@
-# Elysia with Bun runtime
+## With Bun (Crash)
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+Run 
+
+`bun run start-bun`
+
+Call POST /
+
+```
+curl --location --request POST 'http://localhost:3000'
 ```
 
-## Development
-To start the development server run:
-```bash
-bun run dev
+then cancel the request. (ctrl+c)
+
+Server will crash.
+
+
+## With Node (Okay)
+
+With node it's working
+
+Run 
+
+`bun run start-node`
+
+Call POST /
+
+```
+curl --location --request POST 'http://localhost:3000'
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+then cancel the request. (ctrl+c)
+
+Server is okay.

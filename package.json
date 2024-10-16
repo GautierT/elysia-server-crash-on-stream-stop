@@ -4,16 +4,19 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "bun run --watch src/index.ts",
-		"start": "bun run src/index.ts"
+		"start-bun": "bun run src/index-bun.ts",
+		"start-node": "tsx src/index-node.ts"
 	},
 	"dependencies": {
 		"@ai-sdk/anthropic": "^0.0.51",
+		"@hono/node-server": "^1.13.2",
 		"ai": "^3.4.11",
 		"elysia": "latest",
 		"hono": "^4.6.5"
 	},
 	"devDependencies": {
-		"bun-types": "latest"
+		"bun-types": "latest",
+		"tsx": "^4.19.1"
 	},
 	"module": "src/index.js"
 }
