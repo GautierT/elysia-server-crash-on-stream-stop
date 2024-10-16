@@ -2,12 +2,13 @@ import { createAnthropic } from "@ai-sdk/anthropic";
 import { streamText } from "ai";
 
 export const anthropic = createAnthropic({
-	//apiKey: "YOUR_API_KEY",
+	apiKey: "YOUR_API_KEY",
 });
 
 Bun.serve({
 	port: 3000,
 	fetch: async (req) => {
+		console.log("Start POST /");
 		const res = await streamText({
 			model: anthropic("claude-3-5-sonnet-20240620", { cacheControl: true }),
 			temperature: 0,
@@ -19,6 +20,8 @@ Bun.serve({
 			],
 			//abortSignal: request.signal,
 		});
+
+		console.log("Return response");
 
 		return res.toDataStreamResponse();
 
