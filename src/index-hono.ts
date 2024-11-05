@@ -6,7 +6,7 @@ import { Hono } from "hono";
 import { stream } from "hono/streaming";
 
 export const anthropic = createAnthropic({
-	//apiKey: "YOUR_API_KEY",
+	apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
 const hono = new Hono()

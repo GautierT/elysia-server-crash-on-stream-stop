@@ -1,3 +1,6 @@
+This is fixed by https://bun.sh/blog/bun-v1.1.34#fixed-readablestream-spec-updates
+
+
 ## With Bun (Crash)
 
 Run 
