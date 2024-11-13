@@ -10,6 +10,7 @@ export const anthropic = createAnthropic({
 });
 
 const hono = new Hono()
+	.get("/", (c) => c.text("Hello World"))
 	.post("/", async (c) => {
 		console.log("Start POST /");
 		console.log("method : ", c.req.method);
@@ -64,27 +65,7 @@ const hono = new Hono()
 
 console.log(`Hono is running`);
 
-export default hono;
-
-/* const app = new Elysia()
-	.post("/", async ({ request }) => {
-		const res = await streamText({
-			model: anthropic("claude-3-5-sonnet-20240620", { cacheControl: true }),
-			temperature: 0,
-			messages: [
-				{
-					role: "user",
-					content: "write a very long poem (more than 1000 words) about life",
-				},
-			],
-			//abortSignal: request.signal,
-		});
-
-		return res.toDataStreamResponse();
-	})
-	.listen(3000);
-
-console.log(
-	`🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
-);
- */
+export default {
+	port: 3000,
+	fetch: hono.fetch,
+};
